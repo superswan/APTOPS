@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body%}
+<div class='container'>
+  <h1><b>APT Groups & Operations</b></h1>
+  <hr>
+  {% for table in tables %}
+    <div class="container-fluid">
+        <h2>{{titles[loop.index]}} <img style="height:48px; width:48px;" src="../static/img/flags/{{countrycode[loop.index]}}.png"/>
+        </h2>
+        <div style="height: 400px;" class="table-responsive">
+        {{ table|safe }}
+        </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
